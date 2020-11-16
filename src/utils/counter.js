@@ -39,6 +39,7 @@ const counter=(type, prevType, value, prevValues)=>{
     if(value === "+/-"){        
         if(prevType === "number"){
             const newVal = last[0] ==="-"? last.replace("-","") : "-"+last
+            
              return [...removeLastArrItem(result, newVal)]
         }
         if(prevType===null && result.length){
@@ -48,12 +49,12 @@ const counter=(type, prevType, value, prevValues)=>{
         if(prevType===null && !result.length){
             
             return ["-"]
-        }if(prevType ==="opertor"){
-            return result
+        }if(prevType ==="operator"){
+            return [...result]
         }
     }
     // ----- if number 
-    if(type === "number" ){
+    if(type === "number"  && value !== "+/-"){
 
         if(prevType ==="operator"){
             return [...result, value]

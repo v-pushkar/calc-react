@@ -5,7 +5,7 @@ import { Input } from '../Input/Input';
 import { Button } from '../Button/Button';
 import counter from "./../../utils/counter"
 
-const btns = ["","","",9,8,7,6,5,4,3,2,1,0,".","C"]
+const btns = ["","","+/-",9,8,7,6,5,4,3,2,1,0,".","C"]
 const btns_oper = ["*","/","+","-","="]
 
 const App=()=> {
@@ -26,13 +26,16 @@ const onChangeCountString = (e)=>{
   e.preventDefault() 
   const val = e.target.value
   const type = e.target.dataset.type 
-  const result = counter(type, lastInputType, val, countString)
+  
   setCountString(counter(type, lastInputType, val, countString))
   if(val ==="C"){
     setLastInputType(null)
   } else if(val ==="="){
     setLastInputType("number")
-  }else{
+  }else if(val==="+/-"){
+    setLastInputType(lastInputType)
+  }
+  else{
     setLastInputType(type)
   }
   
@@ -49,9 +52,9 @@ const onChangeCountString = (e)=>{
           </header>
           <main>
             <div className="col col-left">
-            {btns.map(i=>{
+            {btns.map((i, idx)=>{
               if(i===""){
-                return <Button className="not-active" disabled={true}></Button>
+                return <Button key={"not-active"+idx} className="not-active" disabled={true}></Button>
               }else {
                 return(
                   <Button disabled={i === null} key={i} value={i} label={i} type={"number"} onClick={onChangeCountString}></Button>

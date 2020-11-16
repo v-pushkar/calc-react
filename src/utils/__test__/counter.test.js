@@ -56,3 +56,18 @@ describe("counter test input numbers:",()=>{
         expect(counter("number", "operator", "32", ["14","+"])).toStrictEqual(expected)
     })
 })
+
+describe("operator '+/-' test:",()=>{
+    it("should return number with : -23",()=>{
+        const expected = ["-23"]
+        expect(counter("number", "number","+/-", ["23"])).toStrictEqual(expected)
+    })
+    it("should return number without '-': 23",()=>{
+        const expected = ["23"]
+        expect(counter("number", "number","+/-", ["-23"])).toStrictEqual(expected)
+    })
+    it("should return result without changes",()=>{
+        const expected = ["23","+","10","*"]
+        expect(counter("number", "operator","+/-", ["23","+","10","*"])).toStrictEqual(expected)
+    })
+})
