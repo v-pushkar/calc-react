@@ -1,5 +1,7 @@
-$btn-size: 75px;
+$btn-size: 65px;
 $calc-width: 300px;
+$calc-btn-width: 75px;
+$calc-btn-height: 65px;
 
 *{
   box-sizing: border-box;
@@ -35,17 +37,18 @@ $calc-width: 300px;
       flex-wrap: wrap;
 
       &-left{
-        width: calc( $calc-width - $btn-size);
+        width: calc( $calc-width - $calc-btn-width);
       }
       &-right{
-        width: $btn-size;
+        width: $calc-btn-width;
 
         .btn-wrap{
           display: inline;
          
-          height: 60px;
+          height: $calc-btn-height;
           button{
-            background-color: tomato;
+            background-color:#2196f3;
+            color: white;
           }
           
         }
@@ -54,13 +57,27 @@ $calc-width: 300px;
 
      .btn-wrap{
        display: inline;
-       width: $btn-size;
-       height: $btn-size;
+       width: $calc-btn-width;
+       height: $calc-btn-height;
        button{
          width: 100%;
          height: 100%;
+
+        
        }
+
      }
    }
  }
+ button{
+
+  font-weight: bold;
+  font-size: 20px;
+  &.not-active{
+    border:none;
+    background-color: #7db7e0;
+    
+  }
+ }
+
 }

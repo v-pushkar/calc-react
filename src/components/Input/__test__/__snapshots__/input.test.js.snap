@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`marches shapshot input 1`] = `
+<div
+  className="input-wrapp"
+  data-testid="input-wrap"
+>
+  <input
+    data-testid="input"
+    defaultValue="3215"
+  />
+</div>
+`;

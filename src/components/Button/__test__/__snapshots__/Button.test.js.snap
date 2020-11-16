@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mutches snapshot button 1`] = `
+<div
+  className="btn-wrap"
+  data-testid="button"
+>
+  <button
+    className="btn"
+  >
+    8
+  </button>
+</div>
+`;
+
+exports[`mutches snapshot button 2 1`] = `
+<div
+  className="btn-wrap"
+  data-testid="button"
+>
+  <button
+    className="btn"
+  >
+    +
+  </button>
+</div>
+`;
